@@ -5,30 +5,58 @@
 public class CustomerService {
     public static void Run() {
         // Example code to see what's in the customer service queue:
-        // var cs = new CustomerService(10);
+        var cs = new CustomerService(10);
         // Console.WriteLine(cs);
 
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
-        Console.WriteLine("Test 1");
 
-        // Defect(s) Found: 
+        // Scenario: When trying to add a new customer, the queue is full
+        // Expected Result: Display an error
+        Console.WriteLine("Test 1");
+        
+        var queue = new CustomerService(2);
+        queue.AddNewCustomer();
+        queue.AddNewCustomer();
+        queue.AddNewCustomer();
+        // Defect(s) Found: We should have seen Maximum number of customers in the queue
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Dequeue the customer and display the details
+        // Expected Result: Display the details
         Console.WriteLine("Test 2");
+        queue = new CustomerService(4);
+        queue.AddNewCustomer();
+        queue.AddNewCustomer();
+        queue.AddNewCustomer();
+        queue.AddNewCustomer();
+
+        queue.ServeCustomer();
+        queue.ServeCustomer();
+        queue.ServeCustomer();
+        queue.ServeCustomer();
+        
 
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
 
         // Add more Test Cases As Needed Below
+        //Test 3
+        //Scenario:  The queue is empty when trying to serve the customer (the dequeue)
+        //Expected result: Display an error
+        Console.WriteLine("Test 3");
+        queue = new CustomerService(6);
+        queue.ServeCustomer();
+
+        Console.WriteLine("=================");
+
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
     }
 
     private readonly List<Customer> _queue = new();

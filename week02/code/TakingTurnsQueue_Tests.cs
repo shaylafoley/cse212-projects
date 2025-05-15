@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // DO NOT MODIFY THE CODE IN THE TESTS in this file, just the comments above the tests. 
 // Fix the code being tested to match requirements and make all tests pass. 
 
+//Error message says the Asserts.Faile and Asserts.AreEqual failed
 [TestClass]
 public class TakingTurnsQueueTests
 {
@@ -39,6 +40,7 @@ public class TakingTurnsQueueTests
         }
     }
 
+    //Error message is that they are expecting Bob but got Sue
     [TestMethod]
     // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3)
     // After running 5 times, add George with 3 turns.  Run until the queue is empty.
@@ -81,6 +83,7 @@ public class TakingTurnsQueueTests
         }
     }
 
+    //Error code says that they are expecting Bob but got Sue instead
     [TestMethod]
     // Scenario: Create a queue with the following people and turns: Bob (2), Tim (Forever), Sue (3)
     // Run 10 times.
@@ -112,6 +115,7 @@ public class TakingTurnsQueueTests
         Assert.AreEqual(timTurns, infinitePerson.Turns, "People with infinite turns should not have their turns parameter modified to a very big number. A very big number is not infinite.");
     }
 
+    //This error message says they were expecting Tim but got Sue
     [TestMethod]
     // Scenario: Create a queue with the following people and turns: Tim (Forever), Sue (3)
     // Run 10 times.
@@ -140,6 +144,7 @@ public class TakingTurnsQueueTests
         Assert.AreEqual(timTurns, infinitePerson.Turns, "People with infinite turns should not have their turns parameter modified to a very big number. A very big number is not infinite.");
     }
 
+    //No error message, this one passed.
     [TestMethod]
     // Scenario: Try to get the next person from an empty queue
     // Expected Result: Exception should be thrown with appropriate error message.
