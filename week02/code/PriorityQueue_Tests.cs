@@ -17,10 +17,10 @@ public void TestPriorityQueue_1()
     priorityQueue.Enqueue("Task B", 1);
     priorityQueue.Enqueue("Task C", 2);
 
-    // Expected dequeue order: Task B, Task C, Task A
-    Assert.AreEqual("Task B", priorityQueue.Dequeue());
-    Assert.AreEqual("Task C", priorityQueue.Dequeue());
+    // Expected dequeue order: Task A, Task C, Task B
     Assert.AreEqual("Task A", priorityQueue.Dequeue());
+    Assert.AreEqual("Task C", priorityQueue.Dequeue());
+    Assert.AreEqual("Task B", priorityQueue.Dequeue());
 }
 
 
